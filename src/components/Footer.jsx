@@ -1,13 +1,17 @@
 import React from "react";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import gmail from "../assets/gmail (3).png";
+import telephone from "../assets/telephone.png";
+import whatsapp from "../assets/whatsapp.png";
 
 function Footer() {
   return (
     <>
       <div className="bg-white shadow-md flex flex-col md:flex-row justify-around items-center gap-4">
+
         {/* logo and tagline */}
-        <div className="flex items-center bg-blue-400">
+        <div className="w-full md:w-1/3 p-6 rounded-lg flex items-center bg-blue-200">
           <img src={logo} alt="logo" className="h-10 w-10 object-contain" />
           <div className="ml-4 text-start">
             <h3 className="text-xl font-bold">Dream Home Sofa</h3>
@@ -18,25 +22,74 @@ function Footer() {
         </div>
 
         {/* Quick links */}
-        <div className="w-full md:w-1/3 bg-green-200 p-6 rounded-lg shadow-m flex justify-center items-center ">
-          <ul >
-            <li className="hover:text-red-600">
-              <Link to="/">Home</Link>
+        <div className="w-full md:w-1/3 bg-green-200 p-6 rounded-lg shadow-md flex flex-col items-center md:items-start">
+          <h3 className="text-lg font-semibold mb-4 text-center w-full">
+            Quick Links
+          </h3>
+          <ul className="space-y-2 text-gray-700">
+            <li>
+              <Link
+                to="/"
+                className="hover:text-red-600 transition-colors duration-200"
+              >
+                Home
+              </Link>
             </li>
-            <li className="hover:text-red-600">
-              <Link to="services">Services</Link>
+            <li>
+              <Link
+                to="services"
+                className="hover:text-red-600 transition-colors duration-200"
+              >
+                Services
+              </Link>
             </li>
-            <li className="hover:text-red-600">
-              <Link to="gallery">Gallery</Link>
+            <li>
+              <Link
+                to="gallery"
+                className="hover:text-red-600 transition-colors duration-200"
+              >
+                Gallery
+              </Link>
             </li>
           </ul>
         </div>
 
-        {/* address       */}
-        <div className="w-full md:w-1/3 bg-red-200 p-6 rounded-lg shadow-md flex justify-center items-center">
-          <h2>Contact : 999999999</h2>
-          <h2>Email : abc@gmail.com</h2>
+        {/* Contact Info       */}
+        <div className="w-full md:w-1/3 bg-green-200 p-6 rounded-lg shadow-md flex flex-col items-center md:items-start">
+          <h2 className="text-lg font-semibold mb-4 text-center w-full">
+            Contact-Us
+          </h2>
+
+          {/* Gmail */}
+          <div className="flex items-center gap-2 mb-2 bg-red-300">
+            <img src={gmail} alt="Gmail" className="h-8 w-8 object-contain " />
+            <span className="text-sm text-gray-700">
+              DreamHomeSofa@gmail.com
+            </span>
+          </div>
+
+          {/* telephone */}
+          <div className="flex items-center gap-2 mb-2 bg-blue-300 ">
+            <img
+              src={telephone}
+              alt="Telephone"
+              className="h-8 w-8 object-contain"
+            />
+            <span className="text-sm text-gray-700">999999999</span>
+          </div>
+
+          {/* whatsapp */}
+          <div className="flex items-center gap-2 mb-2 bg-blue-300">
+            <img
+              src={whatsapp}
+              alt="Whatsapp"
+              className="h-8 w-8 object-contain"
+            />
+            <span className="text-sm text-gray-700"> 9999999999</span>
+          </div>
+
         </div>
+
       </div>
 
       {/* Copyright */}
