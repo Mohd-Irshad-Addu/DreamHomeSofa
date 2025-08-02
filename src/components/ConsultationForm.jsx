@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 import SuccessMsg from "./SuccessMsg";
 import ContactUs from "../pages/ContactUs";
 
-function ConsultationForm({setIsFormSubmitted}) {
+function ConsultationForm({ setIsFormSubmitted }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false)
-  const [btnDisabled, setBtnDisabled] = useState(true)
+  const [submitted, setSubmitted] = useState(false);
+  const [btnDisabled, setBtnDisabled] = useState(true);
+  
+  const phoneRegex = /^\d{10}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 
   // localStorage.clear()
-
-   
 
   const btnClicked = (e) => {
     e.preventDefault();
@@ -29,110 +31,117 @@ function ConsultationForm({setIsFormSubmitted}) {
       message,
     };
 
+    const storeData = localStorage.getItem("ConsultationData");
 
+    const parsedData = storeData ? JSON.parse(storeData) : [];
 
-    const storeData = localStorage.getItem('ConsultationData')
-
-    const parsedData = storeData ? JSON.parse(storeData): [];
-
-    parsedData.push(formData)
+    parsedData.push(formData);
 
     localStorage.setItem("ConsultationData", JSON.stringify(parsedData));
 
-       
-    
-    setName("")
-    setPhone("")
-    setEmail("")
-    setMessage("")
+    setName("");
+    setPhone("");
+    setEmail("");
+    setMessage("");
 
-    setSubmitted(true)
+    setSubmitted(true);
 
-    setIsFormSubmitted(true)
-    
+    setIsFormSubmitted(true);
   };
-
-  useEffect(()=>{
-    if(
-      name.trim()!== "" &&
-      email.trim()!=="" &&
-      phone.trim()!= "" &&
-      message.trim()!= "" 
-  ) {
-    setBtnDisabled(false)
-  }else{
-    setBtnDisabled(true)
-  }
   
 
-  // console.log(status)
+  useEffect(() => {
+    const isPhoneValid = phoneRegex.test(phone);
+    const isEmailValid = emailRegex.test(email)
+    if (
+      name.trim() !== "" &&
+      email.trim() !== "" &&
+      phone.trim() != "" &&
+      message.trim() != "" &&
+      isPhoneValid &&
+      isEmailValid
+    ) {
+      setBtnDisabled(false);
+    } else {
+      setBtnDisabled(true);
+    }
 
-  },[name, email, phone, message])
+    // console.log(status)
+  }, [name, email, phone, message]);
 
   const status = submitted;
-  
+
   return (
-    <ContactUs myprop={status}/>,
-    <form className="flex flex-col gap-4" onSubmit={btnClicked}>
-      <input
-        type="text"
-        placeholder="Your Name"
-        className="border border-gray-300 rounded px-4 py-2"
-        value={name}
-        onChange={(e) => {
-          setName(e.target.value);
-        }}
-      />
+    (<ContactUs myprop={status} />),
+    (
+      <form className="flex flex-col gap-4" onSubmit={btnClicked}>
+        <input
+          type="text"
+          placeholder="Your Name"
+          className="border border-gray-300 rounded px-4 py-2"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
 
-      <input
-        type="email"
-        placeholder="Your Email"
-        className="border border-gray-300 rounded px-4 py-2"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-        }}
-      />
+        <input
+          type="email"
+          placeholder="Your Email"
+          // className="border border-gray-300 rounded px-4 py-2"
+          className={`border px-4 py-2 rounded ${
+          email !== "" && !emailRegex.test(email)
+            ? "border-red-500"
+            : "border-gray-300"
+        }`}
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
 
-      <input
-        type="tel"
-        placeholder="Phone Number"
-        className="border border-gray-300 rounded px-4 py-2"
-        value={phone}
-        onChange={(e) => {
-          setPhone(e.target.value);
-        }}
-      />
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          // className="border border-gray-300 rounded px-4 py-2"
+         className={`border px-4 py-2 rounded ${
+          phone !== "" && !phoneRegex.test(phone)
+            ? "border-red-500"
+            : "border-gray-300"
+        }`}
+          value={phone}
+          onChange={(e) => {
+            setPhone(e.target.value);
+          }}
+        />
 
-      <textarea
-        rows="4"
-        placeholder="Your Message"
-        className="border border-gray-300 rounded px-4 py-2"
-        value={message}
-        onChange={(e) => {
-          setMessage(e.target.value);
-        }}
-      ></textarea>
+        <textarea
+          rows="4"
+          placeholder="Your Message"
+          className="border border-gray-300 rounded px-4 py-2"
+          value={message}
+          onChange={(e) => {
+            setMessage(e.target.value);
+          }}
+        ></textarea>
 
-      <button
-        type="submit"
-        className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
-        disabled = {btnDisabled}
-      >
-        Send Message
-      </button>
+        <button
+          type="submit"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+          disabled={btnDisabled}
+        >
+          Send Message
+        </button>
 
-      {submitted ? (<div className="text-green-600 font-semibold mt-2 text-center">
-                 {/* <div><Link to='/'>Back to Home Page </Link></div>    */}
-                 {/* <SuccessMsg /> */}
-      </div>
-                    
-    ) : null}
-    </form>
-    
-    
+        {submitted ? (
+          <div className="text-green-600 font-semibold mt-2 text-center">
+            {/* <div><Link to='/'>Back to Home Page </Link></div>    */}
+            {/* <SuccessMsg /> */}
+          </div>
+        ) : null}
+      </form>
+    )
   );
-  
 }
 
 export default ConsultationForm;

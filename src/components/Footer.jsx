@@ -65,9 +65,9 @@ function Footer() {
           <div className="flex justify-center w-full">
             <div className="flex items-center gap-3 w-[250px]">
               <img src={gmail} alt="Gmail" className="h-8 w-8 object-contain" />
-              <span className="text-sm text-gray-700">
+             <a href="#"> <span className="text-sm text-gray-700">
                 DreamHomeSofa@gmail.com
-              </span>
+              </span></a>
             </div>
           </div>
 
