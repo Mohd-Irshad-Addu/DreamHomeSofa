@@ -10,9 +10,7 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-white">
-        <h1 className="text-4xl font-bold text-center text-blue-600 mt-10">
-          DreamHome Sofa Website
-        </h1>
+        {/* <h1 className="text-4xl font-bold text-center text-blue-600 mt-10"></h1> */}
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />

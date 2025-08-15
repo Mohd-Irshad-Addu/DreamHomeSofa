@@ -5,15 +5,21 @@ import logo from "../assets/logo.png";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md mb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo + Brand */}
-          <div className="flex items-center space-x-3">
-            <img src={logo} alt="logo" className="h-10 w-10 object-contain" />
-            <h3 className="text-xl font-semibold font-serif text-gray-800">
-              Dream Home Sofa
-            </h3>
+          <div className="flex flex-col items-center space-y-2 md:space-y-3">
+            <div className="flex items-center space-x-3 -mb-3">
+              <img src={logo} alt="logo" className="h-10 w-10 object-contain" />
+              <h1 className="text-5xl md:text-4xl font-semibold font-poppins italic text-gray-800/90 tracking-tight">
+                Dream Home Sofa
+              </h1>
+            </div>
+
+            <p className="text-lg md:text-xl text-gray-500 italic text-center ml-8">
+                 Luxury sofas for every home
+            </p>
           </div>
 
           {/* Navigation Links for Desktop */}
