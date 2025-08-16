@@ -60,6 +60,7 @@ function Home() {
                 src="/DreamHomeSofa/Home/high quality.jpeg"
                 alt="Quality"
                 className="w-full h-auto rounded-md mb-4"
+                loading="lazy"
               />
               <h3 className="text-xl font-semibold mb-2">High Quality</h3>
               <p className="text-gray-600">
@@ -71,6 +72,7 @@ function Home() {
                 src="/DreamHomeSofa/Home/fast service.jpeg"
                 alt="Fast Service"
                 className="w-full h-auto rounded-md mb-4"
+                loading="lazy"
               />
               <h3 className="text-xl font-semibold mb-2">Fast Service</h3>
               <p className="text-gray-600">
@@ -82,6 +84,7 @@ function Home() {
                 src="/DreamHomeSofa/Home/affordable price.jpeg"
                 alt="Affordable"
                 className="w-full h-auto rounded-md mb-4"
+                loading="lazy"
               />
               <h3 className="text-xl font-semibold mb-2">Affordable Prices</h3>
               <p className="text-gray-600">
@@ -103,6 +106,7 @@ function Home() {
               src="/DreamHomeSofa/Home/slider/repairing.jpg"
               alt="Sofa Repair"
               className="w-full h-auto rounded-md mb-4"
+              loading="lazy"
             />
             <h3 className="text-xl font-semibold mb-2">Sofa Repair</h3>
             <p className="text-gray-600">
@@ -114,6 +118,7 @@ function Home() {
               src="/DreamHomeSofa/Home/custom sofa.png"
               alt="Custom Sofa"
               className="w-full h-auto rounded-md mb-4"
+              loading="lazy"
             />
             <h3 className="text-xl font-semibold mb-2">Custom Sofa</h3>
             <p className="text-gray-600">
@@ -125,6 +130,7 @@ function Home() {
               src="/DreamHomeSofa/Home/fabric change.jpeg"
               alt="Fabric Change"
               className="w-full h-auto rounded-md mb-4"
+              loading="lazy"
             />
             <h3 className="text-xl font-semibold mb-2">Fabric Change</h3>
             <p className="text-gray-600">

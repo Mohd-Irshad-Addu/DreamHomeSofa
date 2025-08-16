@@ -37,6 +37,7 @@ function Slider() {
                 src={src}
                 alt={`Sofa ${i + 1}`}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
 
               {/* Consultation overlay */}
@@ -48,7 +49,7 @@ function Slider() {
                   Comfort & Elegance for Your Home
                 </p>
                 <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-2 rounded-md font-semibold transition">
-                  <Link to="contact">Get Free Consultation</Link> 
+                  <Link to="contact">Get Your Free Sofa Consultation</Link> 
                 </button>
               </div>
             </div>

@@ -3,22 +3,43 @@ import ServiceCard from "../components/ServiceCard"; // ✅ Import reusable card
 
 function Services() {
   const servicesData = [
-    {
-      img: "/DreamHomeSofa/seviceCard/sofa-repair-near-me2.jpg",
-      title: "Sofa Repair",
-      desc: "Restore your sofa's comfort and look with our expert repair service.",
-    },
-    {
-      img: "/images/custom-sofa.jpg",
-      title: "Custom Sofa Manufacturing",
-      desc: "Get a sofa designed exactly the way you imagine it.",
-    },
-    {
-      img: "/images/sofa-cleaning.jpg",
-      title: "Sofa Cleaning",
-      desc: "Deep cleaning to make your sofa look brand new again.",
-    },
-  ];
+  {
+    img: "/DreamHomeSofa/seviceCard/sofa-repair-near-me2.jpg",
+    title: "Sofa Repair",
+    desc: "Restore your sofa's comfort and look with our expert repair service.",
+  },
+  {
+    img: "/images/custom-sofa.jpg",
+    title: "Custom Sofa Manufacturing",
+    desc: "Get a sofa designed exactly the way you imagine it.",
+  },
+  {
+    img: "/images/sofa-cleaning.jpg",
+    title: "Sofa Cleaning",
+    desc: "Deep cleaning to make your sofa look brand new again.",
+  },
+  {
+    img: "/images/headboard-work.jpg",
+    title: "Head Board Works",
+    desc: "Design and installation of stylish and sturdy headboards.",
+  },
+  {
+    img: "/images/curtains.jpg",
+    title: "Curtains",
+    desc: "Custom curtains to match your interior and style.",
+  },
+  {
+    img: "/images/mattress.jpg",
+    title: "Mattress",
+    desc: "High-quality mattresses for comfort and durability.",
+  },
+  {
+    img: "/images/lining-works.jpg",
+    title: "Lining Works",
+    desc: "Professional lining services for sofas and furniture.",
+  },
+];
+
 
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4 md:px-12">

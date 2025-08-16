@@ -58,7 +58,7 @@ function ConsultationForm({ setIsFormSubmitted }) {
       )}
 
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
-        Get a Free Consultation
+        Get Your Free Sofa Consultation
       </h2>
 
       <form className="flex flex-col gap-4" onSubmit={btnClicked}>
@@ -70,20 +70,7 @@ function ConsultationForm({ setIsFormSubmitted }) {
           onChange={(e) => setName(e.target.value)}
         />
 
-        <input
-          type="email"
-          placeholder="Your Email"
-          className={`border rounded-lg px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
-            email !== "" && !emailRegex.test(email)
-              ? "border-red-500 focus:ring-red-400"
-              : "border-gray-300 focus:border-blue-500"
-          }`}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        {email !== "" && !emailRegex.test(email) && (
-          <span className="text-red-500 text-sm">Enter a valid email</span>
-        )}
+        
 
         <input
           type="tel"

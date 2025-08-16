@@ -7,6 +7,7 @@ function ServiceCard({ img, title, desc }) {
         src={img}
         alt={title}
         className="w-full object-contain rounded-md mb-4"
+        loading="lazy"
       />
       <h2 className="text-xl font-semibold text-gray-800 mb-2">
         {title}
