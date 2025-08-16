@@ -8,14 +8,14 @@ import "swiper/css/pagination";
 
 
 const images = [
-  "/src/assets/Home/slider/7.jpg",
-  "/src/assets/Home/slider/2.jpg",
-  "/src/assets/Home/slider/4.jpg",
-  "/src/assets/Home/slider/6.jpg",
-  "/src/assets/Home/slider/5.jpg",
-  "/src/assets/Home/slider/8.jpg",
-  "/src/assets/Home/slider/9.jpg",
-  "/src/assets/Home/slider/10.jpg",
+  "/DreamHomeSofa/Home/slider/7.jpg",
+  "/DreamHomeSofa/Home/slider/8.jpg",
+   "/DreamHomeSofa/Home/slider/9.jpg",
+   "/DreamHomeSofa/Home/slider/10.jpg",
+  "/DreamHomeSofa/Home/slider/3.jpg",
+   "/DreamHomeSofa/Home/slider/2.jpg",
+  "/DreamHomeSofa/Home/slider/5.jpg",
+   "/DreamHomeSofa/Home/slider/1.jpg",
 ];
 
 function Slider() {

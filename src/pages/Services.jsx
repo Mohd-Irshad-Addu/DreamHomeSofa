@@ -4,7 +4,7 @@ import ServiceCard from "../components/ServiceCard"; // ✅ Import reusable card
 function Services() {
   const servicesData = [
     {
-      img: "/src/assets/seviceCard/sofa-repair-near-me2.jpg",
+      img: "/DreamHomeSofa/seviceCard/sofa-repair-near-me2.jpg",
       title: "Sofa Repair",
       desc: "Restore your sofa's comfort and look with our expert repair service.",
     },
