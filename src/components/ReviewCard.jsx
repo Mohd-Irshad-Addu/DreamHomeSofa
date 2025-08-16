@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function ReviewCard() {
+    const [userName, serUserName] = useState("")
+    const [rating, setRating] = useState("")
+    const [feedback, setFeedBack] = useState("")
+    const [submit, setSubmit] = useState("")
+
+    const btnClicked = (e)=>{
+        e.preventDefault();
+
+        const formData = {userName, rating, feedback, submit}
+    }
+
   return (
     <div className="md:col-span-3 bg-white rounded-lg shadow-md p-6">
     <h2 className="text-xl font-bold mb-4 text-center">Leave Your Feedback</h2>
