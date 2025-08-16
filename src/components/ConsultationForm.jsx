@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import SuccessMsg from "./SuccessMsg";
 import ContactUs from "../pages/ContactUs";
 
 function ConsultationForm({ setIsFormSubmitted }) {
@@ -10,54 +8,38 @@ function ConsultationForm({ setIsFormSubmitted }) {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [btnDisabled, setBtnDisabled] = useState(true);
-  
+
   const phoneRegex = /^\d{10}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-
-  // localStorage.clear()
-
   const btnClicked = (e) => {
     e.preventDefault();
-    // console.log(name);
-    // console.log(phone);
-    // console.log(email);
-    // console.log(message);
 
-    const formData = {
-      name,
-      phone,
-      email,
-      message,
-    };
-
+    const formData = { name, phone, email, message };
     const storeData = localStorage.getItem("ConsultationData");
-
     const parsedData = storeData ? JSON.parse(storeData) : [];
-
     parsedData.push(formData);
-
     localStorage.setItem("ConsultationData", JSON.stringify(parsedData));
 
     setName("");
     setPhone("");
     setEmail("");
     setMessage("");
-
     setSubmitted(true);
-
     setIsFormSubmitted(true);
+
+    // hide success message after 3s
+    setTimeout(() => setSubmitted(false), 3000);
   };
-  
 
   useEffect(() => {
     const isPhoneValid = phoneRegex.test(phone);
-    const isEmailValid = emailRegex.test(email)
+    const isEmailValid = emailRegex.test(email);
     if (
       name.trim() !== "" &&
       email.trim() !== "" &&
-      phone.trim() != "" &&
-      message.trim() != "" &&
+      phone.trim() !== "" &&
+      message.trim() !== "" &&
       isPhoneValid &&
       isEmailValid
     ) {
@@ -65,82 +47,80 @@ function ConsultationForm({ setIsFormSubmitted }) {
     } else {
       setBtnDisabled(true);
     }
-
-    // console.log(status)
   }, [name, email, phone, message]);
 
-  const status = submitted;
-
   return (
-    (<ContactUs myprop={status} />),
-    (
+    <div className="bg-white shadow-xl rounded-xl p-8 max-w-md w-full mx-auto relative">
+      {submitted && (
+        <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-md animate-fadeInOut">
+          Message Sent Successfully!
+        </div>
+      )}
+
+      <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
+        Get a Free Consultation
+      </h2>
+
       <form className="flex flex-col gap-4" onSubmit={btnClicked}>
         <input
           type="text"
           placeholder="Your Name"
-          className="border border-gray-300 rounded px-4 py-2"
+          className="border border-gray-300 rounded-lg px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
           value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
+          onChange={(e) => setName(e.target.value)}
         />
 
         <input
           type="email"
           placeholder="Your Email"
-          // className="border border-gray-300 rounded px-4 py-2"
-          className={`border px-4 py-2 rounded ${
-          email !== "" && !emailRegex.test(email)
-            ? "border-red-500"
-            : "border-gray-300"
-        }`}
+          className={`border rounded-lg px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition ${
+            email !== "" && !emailRegex.test(email)
+              ? "border-red-500 focus:ring-red-400"
+              : "border-gray-300 focus:border-blue-500"
+          }`}
           value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
+          onChange={(e) => setEmail(e.target.value)}
         />
+        {email !== "" && !emailRegex.test(email) && (
+          <span className="text-red-500 text-sm">Enter a valid email</span>
+        )}
 
         <input
           type="tel"
           placeholder="Phone Number"
-          // className="border border-gray-300 rounded px-4 py-2"
-         className={`border px-4 py-2 rounded ${
-          phone !== "" && !phoneRegex.test(phone)
-            ? "border-red-500"
-            : "border-gray-300"
-        }`}
+          className={`border rounded-lg px-4 py-3 shadow-sm focus:outline-none focus:ring-2 transition ${
+            phone !== "" && !phoneRegex.test(phone)
+              ? "border-red-500 focus:ring-red-400"
+              : "border-gray-300 focus:ring-blue-500"
+          }`}
           value={phone}
-          onChange={(e) => {
-            setPhone(e.target.value);
-          }}
+          onChange={(e) => setPhone(e.target.value)}
         />
+        {phone !== "" && !phoneRegex.test(phone) && (
+          <span className="text-red-500 text-sm">Enter a valid 10-digit phone</span>
+        )}
 
         <textarea
           rows="4"
           placeholder="Your Message"
-          className="border border-gray-300 rounded px-4 py-2"
+          className="border border-gray-300 rounded-lg px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-none"
           value={message}
-          onChange={(e) => {
-            setMessage(e.target.value);
-          }}
+          onChange={(e) => setMessage(e.target.value)}
         ></textarea>
 
         <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+          className={`w-full py-3 px-4 rounded-lg font-semibold text-white transition ${
+            btnDisabled
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-indigo-600 hover:to-blue-500 shadow-md hover:shadow-lg"
+          }`}
           disabled={btnDisabled}
         >
           Send Message
         </button>
-
-        {submitted ? (
-          <div className="text-green-600 font-semibold mt-2 text-center">
-            {/* <div><Link to='/'>Back to Home Page </Link></div>    */}
-            {/* <SuccessMsg /> */}
-          </div>
-        ) : null}
       </form>
-    )
+    </div>
   );
 }
 

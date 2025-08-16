@@ -17,7 +17,7 @@ function Navbar() {
     </h1>
   </div>
   <p className="text-xs sm:text-base md:text-lg lg:text-xl font-light italic text-gray-500/90 text-left sm:text-center sm:mx-0 ml-2 sm:ml-0">
-    “Luxury sofas for every home.”
+    “Luxury sofas for every home”
   </p>
 </div>
 
