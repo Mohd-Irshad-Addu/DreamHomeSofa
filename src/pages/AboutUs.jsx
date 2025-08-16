@@ -12,14 +12,13 @@ function AboutUs() {
   return (
     <div className="w-full">
       <section className="relative w-full h-96 rounded-b-3xl overflow-hidden flex items-center justify-center">
-        {/* Blurred background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: heroImage ? `url(${heroImage})` : "none",
-            filter: "blur(0px)",
-          }}
-        ></div>
+        {/* Lazy loaded blurred background image */}
+        <img
+          src={heroImage}
+          alt="Hero Background"
+          className="absolute inset-0 w-full h-full object-cover filter blur-0"
+          loading="lazy"
+        />
 
         {/* Overlay for contrast */}
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
