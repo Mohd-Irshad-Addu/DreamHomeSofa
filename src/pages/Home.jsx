@@ -28,22 +28,25 @@ function Home() {
       <Slider />
 
       {/* 2. Short Intro Section */}
-      <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center">
-        <img
-          src="/src/assets/Home/sofa workshop.jpg"
-          alt="About Us"
-          className="w-full h-80 object-cover rounded-lg shadow-lg"
-        />
-        <div>
-          <h2 className="text-3xl font-bold mb-4">About Our Sofa Workshop</h2>
-          <p className="text-gray-600 mb-6">
-           At Dream Home Sofa, we specialize in premium sofa manufacturing and repair services. With 10+ years of experience, our mission is to bring comfort, style, and durability to your living spaces. Whether you want a brand new sofa or to restore an old one, we ensure top-quality craftsmanship at affordable prices.
-          </p>
-          <button className="px-6 py-3 bg-yellow-500 text-black rounded-lg font-semibold hover:bg-yellow-400 transition">
-            Learn More
-          </button>
-        </div>
-      </div>
+<div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center">
+  <img
+    src="/src/assets/Home/sofa workshop.jpg"
+    alt="About Us"
+    className="w-full h-60 sm:h-72 md:h-80 object-cover object-right rounded-lg shadow-lg"
+  />
+  <div>
+    <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold mb-4">
+      About Our Sofa Workshop
+    </h2>
+    <p className="text-gray-600 mb-6 text-sm sm:text-base md:text-base lg:text-lg">
+      At Dream Home Sofa, we specialize in premium sofa manufacturing and repair services. With 10+ years of experience, our mission is to bring comfort, style, and durability to your living spaces. Whether you want a brand new sofa or to restore an old one, we ensure top-quality craftsmanship at affordable prices.
+    </p>
+    <button className="px-6 py-3 bg-yellow-500 text-black rounded-lg font-semibold hover:bg-yellow-400 transition">
+      Learn More
+    </button>
+  </div>
+</div>
+
 
       {/* 3. Why Choose Us */}
       <div className="bg-gray-100 py-12">

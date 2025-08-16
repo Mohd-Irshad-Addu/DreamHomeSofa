@@ -9,18 +9,18 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo + Brand */}
-          <div className="flex flex-col items-center space-y-2 md:space-y-3">
-            <div className="flex items-center space-x-3 -mb-3">
-              <img src={logo} alt="logo" className="h-10 w-10 object-contain" />
-              <h1 className="text-5xl md:text-4xl font-semibold font-poppins italic text-gray-800/90 tracking-tight">
-                Dream Home Sofa
-              </h1>
-            </div>
+         <div className="flex flex-col items-center space-y-1 md:space-y-2">
+  <div className="flex items-center space-x-3 -mb-1 md:-mb-3">
+    <img src={logo} alt="logo" className="h-8 w-8 sm:h-10 sm:w-10 object-contain" />
+    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold font-poppins italic text-gray-800/90 tracking-tight">
+      Dream Home Sofa
+    </h1>
+  </div>
+  <p className="text-xs sm:text-base md:text-lg lg:text-xl font-light italic text-gray-500/90 text-left sm:text-center sm:mx-0 ml-2 sm:ml-0">
+    “Luxury sofas for every home.”
+  </p>
+</div>
 
-            <p className="text-lg md:text-xl text-gray-500 italic text-center ml-8">
-                 Luxury sofas for every home
-            </p>
-          </div>
 
           {/* Navigation Links for Desktop */}
           <div className="hidden md:flex space-x-6">
