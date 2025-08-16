@@ -16,9 +16,10 @@ function Navbar() {
       Dream Home Sofa
     </h1>
   </div>
-  <p className="text-xs sm:text-base md:text-lg lg:text-xl font-light italic text-gray-500/90 text-left sm:text-center sm:mx-0 ml-2 sm:ml-0">
-    “Luxury sofas for every home”
-  </p>
+  <p className="text-xs sm:text-base md:text-lg lg:text-xl font-light italic text-gray-500/90 text-left sm:text-center sm:mx-0 ml-6 sm:ml-0">
+  “Luxury sofas for every home”
+</p>
+
 </div>
 
 
@@ -53,6 +54,12 @@ function Navbar() {
               className="text-gray-700 hover:text-blue-600 transition"
             >
               Contact-Us
+            </Link>
+            <Link
+              to="reviewes"
+              className="text-gray-700 hover:text-blue-600 transition"
+            >
+              Customer Reviews
             </Link>
           </div>
 
@@ -104,6 +111,12 @@ function Navbar() {
               className="text-gray-700 hover:text-blue-600"
             >
               Contact Us
+            </Link>
+               <Link
+              to="reviewes"
+              className="text-gray-700 hover:text-blue-600 transition"
+            >
+              Customer Reviews
             </Link>
           </div>
         )}

@@ -1,6 +1,6 @@
 // App.jsx
 import { Routes, Route } from "react-router-dom";  // HashRouter hata diya
-import { Home, AboutUs, ContactUs, Services, Gallery } from "./pages";
+import { Home, AboutUs, ContactUs, Services, Gallery, Reviews } from "./pages";
 import Layout from "./components/Layout";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
           <Route path="gallery" element={<Gallery />} />
           <Route path="contact" element={<ContactUs />} />
           <Route path="about" element={<AboutUs />} />
+          <Route path="reviewes" element={<Reviews />} />
         </Route>
       </Routes>
     </div>
