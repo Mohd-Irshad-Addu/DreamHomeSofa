@@ -68,9 +68,7 @@ function ConsultationForm({ setIsFormSubmitted }) {
           className="border border-gray-300 rounded-lg px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
           value={name}
           onChange={(e) => setName(e.target.value)}
-        />
-
-        
+        />       
 
         <input
           type="tel"
