@@ -11,7 +11,7 @@ function AboutUs() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative w-full h-96 rounded-b-3xl overflow-hidden flex items-center justify-center">
+      <section className="relative w-full h-96 rounded-b-3xl overflow-hidden flex items-center justify-center mb-6">
         <img
           src={heroImage}
           alt="Hero Background"
@@ -30,7 +30,10 @@ function AboutUs() {
       </section>
 
       {/* Our Story Section */}
-      <section className="bg-gray-50 max-w-7xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-8 items-center">
+      <section
+        className={`bg-gray-50 max-w-7xl mx-auto px-4 py-20 grid gap-8 items-center 
+  ${storyImage ? "md:grid-cols-2" : "md:grid-cols-1"}`}
+      >
         {storyImage && (
           <img
             src={storyImage}
@@ -38,16 +41,22 @@ function AboutUs() {
             className="w-full h-80 object-cover rounded-lg shadow-lg transform hover:scale-105 transition"
           />
         )}
-        <div className="text-center md:text-left">
-          <h2 className="text-3xl font-bold mb-2 text-gray-800 relative">
-            Our Story
-          </h2>
-          <div className="w-24 h-1 bg-blue-500 mx-auto md:mx-0 mb-6 rounded-full"></div>
+        <div className="mx-auto text-center max-w-3xl">
+          <h2 className="text-3xl font-bold mb-2 text-gray-800">Our Story</h2>
+          <div className="w-24 h-1 bg-blue-500 mx-auto mb-6 rounded-full"></div>
           <p className="text-gray-600 mb-4">
-            Our journey is driven by a passion for creating comfortable, stylish, and durable sofas. We always prioritize quality craftsmanship and attention to detail, ensuring that every piece we make meets the highest standards. Our dedicated team works tirelessly to combine elegance with functionality, creating sofas that not only look beautiful but also stand the test of time.
+            Our journey is driven by a passion for creating comfortable,
+            stylish, and durable sofas. We always prioritize quality
+            craftsmanship and attention to detail, ensuring that every piece we
+            make meets the highest standards. Our dedicated team works
+            tirelessly to combine elegance with functionality, creating sofas
+            that not only look beautiful but also stand the test of time.
           </p>
           <p className="text-gray-600">
-            Every piece we make is designed to bring warmth and sophistication to your living space, making your house feel like a true home. We believe in delivering more than just furniture — we deliver comfort, style, and lasting satisfaction for every customer.
+            Every piece we make is designed to bring warmth and sophistication
+            to your living space, making your house feel like a true home. We
+            believe in delivering more than just furniture — we deliver comfort,
+            style, and lasting satisfaction for every customer.
           </p>
         </div>
       </section>
@@ -68,7 +77,9 @@ function AboutUs() {
               className="w-100 h-100 mb-4 object-contain shadow-lg rounded-xl transform hover:scale-105 transition-transform duration-300"
               loading="lazy"
             />
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Premium Quality</h3>
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              Premium Quality
+            </h3>
             <p className="text-gray-600 text-center">
               Only the best materials for your comfort and durability.
             </p>
@@ -82,7 +93,9 @@ function AboutUs() {
               className="w-100 h-100 mb-4 object-contain shadow-lg rounded-xl transform hover:scale-105 transition-transform duration-300"
               loading="lazy"
             />
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Custom Designs</h3>
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              Custom Designs
+            </h3>
             <p className="text-gray-600 text-center">
               Tailored sofas to match your style and space.
             </p>
@@ -96,7 +109,9 @@ function AboutUs() {
               className="w-100 h-100 mb-4 object-contain shadow-lg rounded-xl transform hover:scale-105 transition-transform duration-300"
               loading="lazy"
             />
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Affordable Pricing</h3>
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              Affordable Pricing
+            </h3>
             <p className="text-gray-600 text-center">
               Luxury sofas without burning your wallet.
             </p>
@@ -110,7 +125,9 @@ function AboutUs() {
               className="w-100 h-100 mb-4 object-contain shadow-lg rounded-xl transform hover:scale-105 transition-transform duration-300"
               loading="lazy"
             />
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Fast Service</h3>
+            <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              Fast Service
+            </h3>
             <p className="text-gray-600 text-center">
               Quick installation and delivery right to your home.
             </p>

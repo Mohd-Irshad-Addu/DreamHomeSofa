@@ -103,7 +103,7 @@ function Home() {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="p-6 bg-white rounded-lg shadow-lg text-center">
             <img
-              src="/DreamHomeSofa/Home/slider/repairing.jpg"
+              src="/DreamHomeSofa/seviceCard/sofa-repair-near-me2.jpg"
               alt="Sofa Repair"
               className="w-full h-auto rounded-md mb-4"
               loading="lazy"
