@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import TestComp from '../components/TestComp'
 // Example image URLs (replace with real ones)
 const galleryImages = [
   { src: "/Gallery/sofa1.jpg", category: "Sofa" },
@@ -102,6 +102,7 @@ function Gallery() {
           </div>
         )}
       </section>
+      {/* <TestComp /> */}
     </div>
   );
 }
