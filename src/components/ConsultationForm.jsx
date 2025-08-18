@@ -4,7 +4,6 @@ import ContactUs from "../pages/ContactUs";
 function ConsultationForm({ setIsFormSubmitted }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [btnDisabled, setBtnDisabled] = useState(true);
@@ -15,7 +14,7 @@ function ConsultationForm({ setIsFormSubmitted }) {
   const btnClicked = (e) => {
     e.preventDefault();
 
-    const formData = { name, phone, email, message };
+    const formData = { name, phone,  message };
     const storeData = localStorage.getItem("ConsultationData");
     const parsedData = storeData ? JSON.parse(storeData) : [];
     parsedData.push(formData);
@@ -23,7 +22,6 @@ function ConsultationForm({ setIsFormSubmitted }) {
 
     setName("");
     setPhone("");
-    setEmail("");
     setMessage("");
     setSubmitted(true);
     setIsFormSubmitted(true);
@@ -34,20 +32,20 @@ function ConsultationForm({ setIsFormSubmitted }) {
 
   useEffect(() => {
     const isPhoneValid = phoneRegex.test(phone);
-    const isEmailValid = emailRegex.test(email);
+    
     if (
       name.trim() !== "" &&
-      email.trim() !== "" &&
+      
       phone.trim() !== "" &&
       message.trim() !== "" &&
-      isPhoneValid &&
-      isEmailValid
+      isPhoneValid
+      
     ) {
       setBtnDisabled(false);
     } else {
       setBtnDisabled(true);
     }
-  }, [name, email, phone, message]);
+  }, [name, phone, message]);
 
   return (
     <div className="bg-white shadow-xl rounded-xl p-8 max-w-md w-full mx-auto relative">

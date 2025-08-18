@@ -4,70 +4,53 @@ import logo from "../assets/logo.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="bg-white shadow-md mb-6">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-gray-100 shadow-sm sticky top-0 z-50 mb-2">
+      <div className="w-full px-3 sm:px-4 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo + Brand */}
-         <div className="flex flex-col items-center space-y-1 md:space-y-2">
-  <div className="flex items-center space-x-3 -mb-1 md:-mb-3">
-    <img src={logo} alt="logo" className="h-8 w-8 sm:h-10 sm:w-10 object-contain" />
-    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold font-poppins italic text-gray-800/90 tracking-tight">
-      Dream Home Sofa
-    </h1>
-  </div>
-  <p className="text-xs sm:text-base md:text-lg lg:text-xl font-light italic text-gray-500/90 text-left sm:text-center sm:mx-0 ml-6 sm:ml-0">
-  “Luxury sofas for every home”
-</p>
-
-</div>
-
-
-          {/* Navigation Links for Desktop */}
-          <div className="hidden md:flex space-x-6">
-            <Link
-              to="/"
-              className="text-gray-700 hover:text-blue-600 transition"
-            >
-              Home
-            </Link>
-            <Link
-              to="services"
-              className="text-gray-700 hover:text-blue-600 transition"
-            >
-              Services
-            </Link>
-            <Link
-              to="gallery"
-              className="text-gray-700 hover:text-blue-600 transition"
-            >
-              Gallery
-            </Link>
-            <Link
-              to="about"
-              className="text-gray-700 hover:text-blue-600 transition"
-            >
-              About-Us
-            </Link>
-            <Link
-              to="contact"
-              className="text-gray-700 hover:text-blue-600 transition"
-            >
-              Contact-Us
-            </Link>
-            <Link
-              to="reviewes"
-              className="text-gray-700 hover:text-blue-600 transition"
-            >
-              Customer Reviews
-            </Link>
+          <div className="flex flex-col items-center space-y-1">
+            <div className="flex items-center space-x-3">
+              <img
+                src={logo}
+                alt="logo"
+                className="h-8 w-8 sm:h-10 sm:w-10 object-contain"
+              />
+              <h1 className="text-[22px] sm:text-3xl md:text-4xl font-bold font-poppins italic text-gray-800 tracking-tight">
+                Dream Home <span className="text-blue-500">Sofa</span>
+              </h1>
+            </div>
+            <p className="text-xs sm:text-sm md:text-base font-light italic text-gray-500 text-center ml-9">
+              — Luxury sofas for every home —
+            </p>
           </div>
 
-          {/* Hamburger for mobile */}
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-8">
+            {[
+              ["Home", "/"],
+              ["Services", "/services"],
+              ["Gallery", "/gallery"],
+              ["About Us", "/about"],
+              ["Contact Us", "/contact"],
+              ["Customer Reviews", "/reviewes"],
+            ].map(([label, path]) => (
+              <Link
+                key={label}
+                to={path}
+                className="text-gray-700 hover:text-blue-600 hover:underline underline-offset-4 transition"
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Hamburger (Mobile) */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-800 focus:outline-none"
+              className="text-gray-800 text-2xl focus:outline-none"
             >
               {isOpen ? "✖" : "☰"}
             </button>
@@ -76,48 +59,24 @@ function Navbar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="flex flex-col space-y-4 pb-4 md:hidden">
-            <Link
-              to="/"
-              onClick={() => setIsOpen(false)}
-              className="text-gray-700 hover:text-blue-600"
-            >
-              Home
-            </Link>
-            <Link
-              to="/services"
-              onClick={() => setIsOpen(false)}
-              className="text-gray-700 hover:text-blue-600"
-            >
-              Services
-            </Link>
-            <Link
-              to="/gallery"
-              onClick={() => setIsOpen(false)}
-              className="text-gray-700 hover:text-blue-600"
-            >
-              Gallery
-            </Link>
-            <Link
-              to="/about"
-              onClick={() => setIsOpen(false)}
-              className="text-gray-700 hover:text-blue-600"
-            >
-              About Us
-            </Link>
-            <Link
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className="text-gray-700 hover:text-blue-600"
-            >
-              Contact Us
-            </Link>
-               <Link
-              to="reviewes"
-              className="text-gray-700 hover:text-blue-600 transition"
-            >
-              Customer Reviews
-            </Link>
+          <div className="flex flex-col space-y-4 pb-4 md:hidden border-t border-gray-200 pt-4">
+            {[
+              ["Home", "/"],
+              ["Services", "/services"],
+              ["Gallery", "/gallery"],
+              ["About Us", "/about"],
+              ["Contact Us", "/contact"],
+              ["Customer Reviews", "/reviewes"],
+            ].map(([label, path]) => (
+              <Link
+                key={label}
+                to={path}
+                onClick={() => setIsOpen(false)}
+                className="text-gray-700 hover:text-blue-600 hover:underline underline-offset-4 transition"
+              >
+                {label}
+              </Link>
+            ))}
           </div>
         )}
       </div>

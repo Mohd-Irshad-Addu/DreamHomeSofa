@@ -19,8 +19,8 @@ function Footer() {
               </h3>
 
               {/* Tagline */}
-              <p className="text-xs sm:text-sm text-gray-500 italic mb-4  md:ml-6">
-                 — Crafted with Comfort —
+              <p className="text-xs sm:text-sm text-gray-500 italic mb-4  md:ml-3">
+                 — Luxury sofas for every home —
               </p>
 
               {/* Divider Line */}

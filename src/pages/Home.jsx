@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "../components/Slider";
+import ConsultationPopup from "../components/ConsultationPopup"
 
 function Home() {
   return (
@@ -138,6 +139,8 @@ function Home() {
             </p>
           </div>
         </div>
+
+        <ConsultationPopup />
 
         {/* View all button */}
         <div className="text-center mt-8">
