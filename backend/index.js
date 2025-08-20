@@ -10,6 +10,7 @@ const app = express();
 // Middlewares
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
@@ -33,8 +34,11 @@ app.get("/api/reviews", async (req, res) => {
 
 // POST a new review to MongoDB
 app.post("/api/reviews", async (req, res) => {
+  // console.log("incoming body", req.body) //for test
+  // res.json({received: req.body })
   const review = new Review({
     name: req.body.name,
+    rating : req.body.rating,
     review: req.body.review
   });
 

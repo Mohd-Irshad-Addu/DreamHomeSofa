@@ -21,6 +21,7 @@ function Reviews() {
 
   // Add new review
   const handleAddReview = async (newReview) => {
+    console.log("🚀 Sending review:", newReview);
     try {
       const response = await fetch("http://localhost:5000/api/reviews", {
         method: "POST",
@@ -52,22 +53,34 @@ function Reviews() {
             No reviews yet. Be the first to leave feedback!
           </p>
         ) : (
-          data.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition"
-            >
-              <h3 className="font-semibold text-lg mb-1">{item.name}</h3>
-              <p className="text-yellow-500 mb-2">
-                {"★".repeat(parseInt(item.rating) || 0)}
-                <span className="text-gray-300">
-                  {"★".repeat(5 - (parseInt(item.rating) || 0))}
-                </span>
-              </p>
+          data.map((item, index) => {
+            // console.log("Review rating:", item); // ← debug
 
-              <p className="text-gray-700">{item.feedback}</p>
-            </div>
-          ))
+            const ratingNumber = Number(item.rating) || 0; // robust conversion
+
+            return (
+              <div
+                key={index}
+                className="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition"
+              >
+                <h3 className="font-semibold text-lg mb-1">{item.name}</h3>
+
+                {/* Star rating */}
+                <div className="flex mb-2">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <span
+                      key={i}
+                      className={i <= ratingNumber ? "text-yellow-400" : "text-gray-300"}
+                    >
+                      ★
+                    </span>
+                  ))}
+                </div>
+
+                <p className="text-gray-700">{item.review}</p>
+              </div>
+            );
+          })
         )}
       </div>
 

@@ -2,21 +2,27 @@ import React, { useState } from "react";
 
 function ReviewCard({ onSubmit }) {
   const [name, setName] = useState("");
-  const [rating, setRating] = useState(5);
+  const [rating, setRating] = useState();
   const [feedback, setFeedback] = useState("");
+  const [message, setMessage] = useState(""); // ✅ success message
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name || !feedback) return;
 
-    // ---------- MongoDB POST ----------
     const newReview = { name, rating, review: feedback };
-    onSubmit(newReview); // send data to backend
-    // ---------- End MongoDB POST ----------
+    onSubmit(newReview);
 
+    // Reset form
     setName("");
-    setRating(5);
+    setRating("");
     setFeedback("");
+
+    // ✅ Show success message
+    setMessage("✅ Thank you! Your review has been submitted.");
+
+    // Hide message automatically after 3 seconds
+    setTimeout(() => setMessage(""), 3000);
   };
 
   return (
@@ -25,6 +31,12 @@ function ReviewCard({ onSubmit }) {
       className="bg-white p-6 rounded-lg shadow border border-gray-200"
     >
       <h3 className="text-lg font-semibold mb-4">Leave a Review</h3>
+
+      {message && (
+        <div className="mb-4 p-2 text-green-700 bg-green-100 border border-green-300 rounded">
+          {message}
+        </div>
+      )}
 
       <input
         type="text"
@@ -39,6 +51,7 @@ function ReviewCard({ onSubmit }) {
         onChange={(e) => setRating(Number(e.target.value))}
         className="w-full border p-2 rounded mb-3"
       >
+        <option value="">Select Rating</option>
         <option value={5}>⭐ 5</option>
         <option value={4}>⭐ 4</option>
         <option value={3}>⭐ 3</option>
