@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ContactUs from "../pages/ContactUs";
 
 function ConsultationForm({ setIsFormSubmitted }) {
   const [name, setName] = useState("");
@@ -9,37 +8,46 @@ function ConsultationForm({ setIsFormSubmitted }) {
   const [btnDisabled, setBtnDisabled] = useState(true);
 
   const phoneRegex = /^\d{10}$/;
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const btnClicked = (e) => {
+  // 👇 async lagana zaroori hai
+  const btnClicked = async (e) => {
     e.preventDefault();
 
-    const formData = { name, phone,  message };
-    const storeData = localStorage.getItem("ConsultationData");
-    const parsedData = storeData ? JSON.parse(storeData) : [];
-    parsedData.push(formData);
-    localStorage.setItem("ConsultationData", JSON.stringify(parsedData));
+    const formData = { name, phone, message };
 
-    setName("");
-    setPhone("");
-    setMessage("");
-    setSubmitted(true);
-    setIsFormSubmitted(true);
+    try {
+      const res = await fetch("http://localhost:5000/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    // hide success message after 3s
-    setTimeout(() => setSubmitted(false), 3000);
+      if (res.ok) {
+        setSubmitted(true);
+        setIsFormSubmitted(true);
+
+        setName("");
+        setPhone("");
+        setMessage("");
+
+        // hide success message after 3s
+        setTimeout(() => setSubmitted(false), 3000);
+      } else {
+        console.log("Failed to send email");
+      }
+    } catch (err) {
+      console.log("Error : ", err);
+    }
   };
 
   useEffect(() => {
     const isPhoneValid = phoneRegex.test(phone);
-    
+
     if (
       name.trim() !== "" &&
-      
       phone.trim() !== "" &&
       message.trim() !== "" &&
       isPhoneValid
-      
     ) {
       setBtnDisabled(false);
     } else {
@@ -66,7 +74,7 @@ function ConsultationForm({ setIsFormSubmitted }) {
           className="border border-gray-300 rounded-lg px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
           value={name}
           onChange={(e) => setName(e.target.value)}
-        />       
+        />
 
         <input
           type="tel"
@@ -80,7 +88,9 @@ function ConsultationForm({ setIsFormSubmitted }) {
           onChange={(e) => setPhone(e.target.value)}
         />
         {phone !== "" && !phoneRegex.test(phone) && (
-          <span className="text-red-500 text-sm">Enter a valid 10-digit phone</span>
+          <span className="text-red-500 text-sm">
+            Enter a valid 10-digit phone
+          </span>
         )}
 
         <textarea
