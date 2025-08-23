@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ConsultationForm from "../components/ConsultationForm"; // tumhara existing form
+import SuccessMsg from "./SuccessMsg";
 
 function ConsultationModalWrapper() {
   const [showModal, setShowModal] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowModal(true), 5000); // 5 sec delay
@@ -22,8 +24,11 @@ function ConsultationModalWrapper() {
           ✖
         </button>
 
-        {/* Embed your existing Consultation Form */}
-        <ConsultationForm />
+        {isFormSubmitted ? (
+          <SuccessMsg message="✅ Thank you! We’ll contact you shortly." />
+        ) : (
+          <ConsultationForm setIsFormSubmitted={setIsFormSubmitted} />
+        )}
       </div>
     </div>
   );

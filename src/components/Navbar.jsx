@@ -17,7 +17,7 @@ function Navbar() {
                 alt="logo"
                 className="h-8 w-8 sm:h-10 sm:w-10 object-contain"
               />
-              <h1 className="text-[22px] sm:text-3xl md:text-4xl font-bold font-poppins italic text-gray-800 tracking-tight">
+              <h1 className="text-2xl font-extrabold text-gray-900 tracking-wide">
                 Dream Home <span className="text-blue-500">Sofa</span>
               </h1>
             </div>
