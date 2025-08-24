@@ -71,7 +71,7 @@ function HomeReviews() {
         <div className="mt-8">
           
           <Link
-  to="/reviews"
+  to="/reviewes"
   className="inline-block px-6 py-2 bg-gray-800 text-white font-medium rounded-full shadow-md hover:bg-gray-700 transition duration-300"
 >
   See All Reviews
