@@ -31,7 +31,7 @@ function Home() {
       {/* 2. Short Intro Section */}
       <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center">
         <img
-          src="/DreamHomeSofa/Home/sofa workshop.jpg"
+          src="../public/Home/sofa workshop.jpg"
           alt="About Us"
           className="w-full h-60 sm:h-72 md:h-80 object-cover object-right rounded-lg shadow-lg"
         />
@@ -59,7 +59,7 @@ function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-6 bg-white rounded-lg shadow-lg">
               <img
-                src="/DreamHomeSofa/Home/high quality.jpeg"
+                src="../public/Home/high quality.jpeg"
                 alt="Quality"
                 className="w-full h-auto rounded-md mb-4"
                 loading="lazy"
@@ -71,7 +71,7 @@ function Home() {
             </div>
             <div className="p-6 bg-white rounded-lg shadow-lg">
               <img
-                src="/DreamHomeSofa/Home/fast service.jpeg"
+                src="../public/Home/fast service.jpeg"
                 alt="Fast Service"
                 className="w-full h-auto rounded-md mb-4"
                 loading="lazy"
@@ -83,7 +83,7 @@ function Home() {
             </div>
             <div className="p-6 bg-white rounded-lg shadow-lg">
               <img
-                src="/DreamHomeSofa/Home/affordable price.jpeg"
+                src="../public/Home/affordable price.jpeg"
                 alt="Affordable"
                 className="w-full h-auto rounded-md mb-4"
                 loading="lazy"
@@ -105,7 +105,7 @@ function Home() {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="p-6 bg-white rounded-lg shadow-lg text-center">
             <img
-              src="/DreamHomeSofa/seviceCard/sofa-repair-near-me2.jpg"
+              src="../public/seviceCard/sofa-repair-near-me2.jpg"
               alt="Sofa Repair"
               className="w-full h-auto rounded-md mb-4"
               loading="lazy"
@@ -117,7 +117,7 @@ function Home() {
           </div>
           <div className="p-6 bg-white rounded-lg shadow-lg text-center">
             <img
-              src="/DreamHomeSofa/Home/custom sofa.png"
+              src="../public/Home/custom sofa.png"
               alt="Custom Sofa"
               className="w-full h-auto rounded-md mb-4"
               loading="lazy"
@@ -129,7 +129,7 @@ function Home() {
           </div>
           <div className="p-6 bg-white rounded-lg shadow-lg text-center">
             <img
-              src="/DreamHomeSofa/Home/fabric change.jpeg"
+              src="../public/Home/fabric change.jpeg"
               alt="Fabric Change"
               className="w-full h-auto rounded-md mb-4"
               loading="lazy"

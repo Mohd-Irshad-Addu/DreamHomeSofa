@@ -1,12 +1,12 @@
 import React from "react";
 
 function AboutUs() {
-  const heroImage = "/DreamHomeSofa/Home/slider/sic.jpg";
+  const heroImage = "../public/Home/slider/sic.jpg"; //sic
   const storyImage = ""; // add if available
-  const qualityIcon = "/DreamHomeSofa/Home/high quality.jpeg";
-  const customIcon = "/DreamHomeSofa/Home/custom sofa.png";
-  const priceIcon = "/DreamHomeSofa/Home/affordable price.jpeg";
-  const deliveryIcon = "/DreamHomeSofa/Home/fast service.jpeg";
+  const qualityIcon = "../public/Home/high quality.jpeg";
+  const customIcon = "../public/Home/custom sofa.png";
+  const priceIcon = "../public/Home/affordable price.jpeg";
+  const deliveryIcon = "../public/Home/fast service.jpeg";
 
   return (
     <div className="w-full">

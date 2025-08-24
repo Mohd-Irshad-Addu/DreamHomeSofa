@@ -24,7 +24,7 @@ function ContactUs() {
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{
-            backgroundImage: "url('/DreamHomeSofa/Home/slider/7.jpg')",
+            backgroundImage: "url('../public/Home/slider/7.jpg')",
             filter: "blur(1px)", // custom blur in pixels
           }}
         ></div>
