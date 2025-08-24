@@ -4,39 +4,39 @@ import ServiceCard from "../components/ServiceCard"; // ✅ Import reusable card
 function Services() {
   const servicesData = [
   {
-    img: "../public/seviceCard/sofa-repair-near-me2.jpg",
+    img: "/seviceCard/sofa-repair-near-me2.jpg",
     title: "Sofa Repair",
     desc: "Restore your sofa's comfort and look with our expert repair service.",
   },
   {
-    img: "../public/seviceCard/curtain.jpeg",
+    img: "/seviceCard/curtain.jpeg",
     title: "Curtains",
     desc: "Custom curtains to match your interior and style.",
   },
    {
-    img: "../public/seviceCard/sofa_cleaning.jpg",
+    img: "/seviceCard/sofa_cleaning.jpg",
     title: "Sofa Cleaning",
     desc: "Deep cleaning to make your sofa look brand new again.",
   },
   {
-    img: "../public/seviceCard/custom sofa maker 3.jpeg",
+    img: "/seviceCard/custom sofa maker 3.jpeg",
     title: "Custom Sofa Manufacturing",
     desc: "Get a sofa designed exactly the way you imagine it.",
   },
  
   {
-    img: "../public/seviceCard/headboard.jpeg",
+    img: "/seviceCard/headboard.jpeg",
     title: "Head Board Works",
     desc: "Design and installation of stylish and sturdy headboards.",
   },
   
   {
-    img: "../public/seviceCard/mattress.jpg",
+    img: "/seviceCard/mattress.jpg",
     title: "Mattress",
     desc: "High-quality mattresses for comfort and durability.",
   },
   {
-    img: "../public/seviceCard/lining.jpg",
+    img: "/seviceCard/lining.jpg",
     title: "Lining Works",
     desc: "Professional lining services for sofas and furniture.",
   },

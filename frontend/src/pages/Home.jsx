@@ -59,7 +59,7 @@ function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-6 bg-white rounded-lg shadow-lg">
               <img
-                src="../public/Home/high quality.jpeg"
+                src="/Home/high quality.jpeg"
                 alt="Quality"
                 className="w-full h-auto rounded-md mb-4"
                 loading="lazy"
@@ -71,7 +71,7 @@ function Home() {
             </div>
             <div className="p-6 bg-white rounded-lg shadow-lg">
               <img
-                src="../public/Home/fast service.jpeg"
+                src="/Home/fast service.jpeg"
                 alt="Fast Service"
                 className="w-full h-auto rounded-md mb-4"
                 loading="lazy"
@@ -83,7 +83,7 @@ function Home() {
             </div>
             <div className="p-6 bg-white rounded-lg shadow-lg">
               <img
-                src="../public/Home/affordable price.jpeg"
+                src="/Home/affordable price.jpeg"
                 alt="Affordable"
                 className="w-full h-auto rounded-md mb-4"
                 loading="lazy"
@@ -105,7 +105,7 @@ function Home() {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="p-6 bg-white rounded-lg shadow-lg text-center">
             <img
-              src="../public/seviceCard/sofa-repair-near-me2.jpg"
+              src="/seviceCard/sofa-repair-near-me2.jpg"
               alt="Sofa Repair"
               className="w-full h-auto rounded-md mb-4"
               loading="lazy"
@@ -117,7 +117,7 @@ function Home() {
           </div>
           <div className="p-6 bg-white rounded-lg shadow-lg text-center">
             <img
-              src="../public/Home/custom sofa.png"
+              src="/Home/custom sofa.png"
               alt="Custom Sofa"
               className="w-full h-auto rounded-md mb-4"
               loading="lazy"
@@ -129,7 +129,7 @@ function Home() {
           </div>
           <div className="p-6 bg-white rounded-lg shadow-lg text-center">
             <img
-              src="../public/Home/fabric change.jpeg"
+              src="/Home/fabric change.jpeg"
               alt="Fabric Change"
               className="w-full h-auto rounded-md mb-4"
               loading="lazy"

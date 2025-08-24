@@ -1,21 +1,20 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-
 const images = [
-  "../public/Home/slider/7.jpg",
-  "../public/Home/slider/8.jpg",
-   "../public/Home/slider/9.jpg",
-   "../public/Home/slider/10.jpg",
-  "../public/Home/slider/3.jpg",
-   "../public/Home/slider/2.jpg",
-  "../public/Home/slider/5.jpg",
-   "../public/Home/slider/1.jpg",
+  "/Home/slider/7.jpg",
+  "/Home/slider/8.jpg",
+  "/Home/slider/9.jpg",
+  "/Home/slider/10.jpg",
+  "/Home/slider/3.jpg",
+  "/Home/slider/2.jpg",
+  "/Home/slider/5.jpg",
+  "/Home/slider/1.jpg",
 ];
 
 function Slider() {
@@ -49,7 +48,7 @@ function Slider() {
                   Comfort & Elegance for Your Home
                 </p>
                 <button className="bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-2 rounded-md font-semibold transition">
-                  <Link to="contact">Get Your Free Sofa Consultation</Link> 
+                  <Link to="contact">Get Your Free Sofa Consultation</Link>
                 </button>
               </div>
             </div>
