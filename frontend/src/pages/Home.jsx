@@ -31,7 +31,7 @@ function Home() {
       {/* 2. Short Intro Section */}
       <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-8 items-center">
         <img
-          src="../public/Home/sofa workshop.jpg"
+          src="/Home/sofa workshop.jpg"
           alt="About Us"
           className="w-full h-60 sm:h-72 md:h-80 object-cover object-right rounded-lg shadow-lg"
         />
