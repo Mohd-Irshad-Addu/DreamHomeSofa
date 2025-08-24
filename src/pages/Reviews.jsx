@@ -4,10 +4,11 @@ import ReviewCard from "../components/ReviewCard";
 function Reviews() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const API_BASE = "https://dreamhomesofa.onrender.com/";
 
   // Fetch reviews from backend
   useEffect(() => {
-    fetch("http://localhost:5000/api/reviews")
+    fetch(`${API_BASE}api/reviews`)
       .then((res) => res.json())
       .then((items) => {
         setData(items);
@@ -23,7 +24,7 @@ function Reviews() {
   const handleAddReview = async (newReview) => {
     console.log("🚀 Sending review:", newReview);
     try {
-      const response = await fetch("http://localhost:5000/api/reviews", {
+      const response = await fetch(`${API_BASE}api/reviews`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newReview),
