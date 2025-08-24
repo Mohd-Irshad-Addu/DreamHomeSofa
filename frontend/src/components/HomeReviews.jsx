@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function HomeReviews() {
+  const API_BASE = "https://dreamhomesofa.onrender.com/";
   const [reviews, setReviews] = useState([]); // ✅ array hona chahiye
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/reviews")
+    fetch(`${API_BASE}api/reviews`)
       .then((res) => res.json())
       .then((items) => {
         // Sirf last 3 reviews dikhane ke liye

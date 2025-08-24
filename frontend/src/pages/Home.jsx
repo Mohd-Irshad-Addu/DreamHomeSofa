@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "../components/Slider";
 import ConsultationPopup from "../components/ConsultationPopup"
-import HomeReviews from "../components/HomeReviews";
+import HomeReviews from '../components/HomeReviews';
 
 function Home() {
   return (
