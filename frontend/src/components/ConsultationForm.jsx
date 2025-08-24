@@ -16,7 +16,7 @@ function ConsultationForm({ setIsFormSubmitted }) {
     const formData = { name, phone, message };
 
     try {
-      const res = await fetch("http://localhost:5000/api/send-email", {
+      const res = await fetch("https://dreamhomesofa.onrender.com/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
